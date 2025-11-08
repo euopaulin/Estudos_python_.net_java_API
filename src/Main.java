@@ -1,20 +1,50 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Scanner;
 
-void main() {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    IO.println(String.format("Hello and welcome!"));
+public class Main {
 
-    var name = ("Paulo");
+    public static void main(String[] args) {
 
-    if (name == "Paulo"){
-        IO.println(String.format(name));
+        System.out.println("Hello and welcome!");
+
+        // Linha 15, onde o método é chamado:
+        String name = input("Qual é o seu nome?");
+
+        if (name.equals("Paulo")) {
+            System.out.println(name);
+        } else {
+            System.out.println("Teste");
+        }
+
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("i = " + i);
+        }
+
+        somar();
+        executarLoop();
     }
 
-    for (int i = 1; i <= 5; i++) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        IO.println("i = " + i);
+    // ESTA PARTE ABAIXO É O QUE O COMPILADOR PROCURA:
+    public static String input(String prompt) {
+        System.out.println(prompt);
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextLine();
+    }
+
+    public static void somar() {
+        double numero = 452.3;
+        double numero2 = 87.3;
+        double resultado = numero + numero2;
+        System.out.println(resultado);
+    }
+
+    public static void executarLoop() {
+        System.out.println("\n--- Executando Loop WHILE ---");
+        int num = 10;
+
+        while (num <= 56 || num > 2 ) {
+                System.out.println("Contando (WHILE): " + num);
+                num++;
+        }
+        System.out.println("Loop finalizado! O valor final de num é: " + num);
     }
 }
